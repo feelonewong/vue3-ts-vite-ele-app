@@ -34,7 +34,6 @@ const getLocation = ()=>{
   function onComplete (data: any) {
     // data是具体的定位信息
     // 得到经纬度
-    console.log("成功:", data)
     const lat = data.position.lat
     const lng = data.position.lng
     //getLatLngLocation(lat, lng)
