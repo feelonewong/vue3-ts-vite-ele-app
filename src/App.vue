@@ -66,7 +66,6 @@ const getLatLngLocation = (lat:string, lng:string)=>{
 }
 
 const getIPLocation = ()=>{
-  console.log("...")
   AMap.plugin("AMap.CitySearch",function(){
     var citySearch = new AMap.CitySearch()
       citySearch.getLocalCity( function(status: string, result: any) {
