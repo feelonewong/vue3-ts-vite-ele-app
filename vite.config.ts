@@ -6,7 +6,14 @@ import path from "path"
 export default defineConfig({
   plugins: [vue()],
   server: {
-        host: '0.0.0.0'
+    host: '0.0.0.0',
+    proxy: {
+      '/api': {
+        target: 'https://www.thenewstep.cn/backend/8000/api/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   },
   // 配置别名 事先安装npm i  @types/node
   resolve: {
